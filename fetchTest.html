@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script async>
+
+        class BlogPost {
+            constructor(title, content, slug, date) {
+                this.title = title;
+                this.content = content;
+                this.slug = slug;
+                this.date = date;
+            }
+        }
+
+        let blogPosts = [];
+
+        async function loadStrapi() {
+            const response = await fetch('https://strapi-production-ed2e.up.railway.app/api/posts');
+            const dataJSON = await response.json();
+
+            for (const dataEntry in dataJSON.data) {
+                blogPosts.push(new BlogPost(dataJSON.data[dataEntry].attributes.title, dataJSON.data[dataEntry].attributes.content, dataJSON.data[dataEntry].attributes.slug, dataJSON.data[dataEntry].attributes.date));
+            }
+
+            console.log(blogPosts); 
+
+            const containerLink = document.querySelector('.container')
+
+            for(const post in blogPosts) {
+                const para = document.createElement('p');
+                para.textContent = blogPosts[post].title;
+                containerLink.appendChild(para);
+            }
+        }
+
+        loadStrapi();
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+</html>

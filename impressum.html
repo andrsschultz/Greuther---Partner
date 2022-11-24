@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="expertenstyles.css">
+    <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("hamburger").style.visibility = "hidden";
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("hamburger").style.visibility = "visible";
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class ="logo" href="index.html">Greuther & Partner</a>
+            <div class="navbar-center">
+                <a href="experten.html">Experten</a>
+                <a href="rechtsgebiete.html">Rechtsgebiete</a>
+                <a href="neues.html">Neues</a>
+            </div>
+            <button class="button">
+                Kostenlose Erstberatung
+            </button>
+        </nav>
+        <nav class="hamburger-menu">
+            <a class ="logo" href="index.html">Greuther & Partner</a>
+            <div id="hamburger" class="row">
+                <input type="checkbox" onclick="openNav()" id="hamburg">
+                <label for="hamburg" class="hamburg">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>
+            </div>
+            <div id="myNav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <a href="index.html">Start</a>
+                    <a href="experten.html">Experten</a>
+                    <a href="rechtsgebiete.html">Rechtsgebiete</a>
+                    <a href="neues.html">Neues</a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <div class="rechtsgebiete-section">
+        <h2>Impressum.</h2>
+    </div>
+    <div class="rechtsgebiete-section">
+        <p>Es handelt sich um eine Konzeptseite von netzdevelopment.de.</p>
+        <p>Andreas Schultz <br>Joseph-Maria-Lutz-Anger 20 <br>81737 München <br>kontakt@netzdevelopment.de</p>
+    </div>
+</body>
+</html>
