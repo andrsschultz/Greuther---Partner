@@ -203,6 +203,120 @@ header h1 {
 }
 
 
+.card-cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 90vw;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.card {
+    width: 20em;
+    height: 26em;
+    border: 1px solid lightgray;
+    margin: 1em;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: .8em;
+}
+
+.card-img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 12em;
+    width: 100%;
+    display: block;
+}
+
+.card-title {
+    margin: 0 0 .4em 0;
+    font-size: 1.5em;
+}
+
+.card-body {
+    padding: .8em .8em 0 .8em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 14em;
+}
+
+.card-description {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.post-categories-cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.post-category-tag {
+    border: .7px solid lightgray;
+    font-weight: 200;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin: 2px 2px;
+    color: gray;
+}
+
+@media only screen and (max-width: 420px) {
+    .card {
+        width: 19em;
+        height: 24em;
+        margin: .8em 0;
+    }
+    .card-img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        height: 11em;
+        width: 100%;
+        display: block;
+    }
+    .card-title {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    .card-body {
+        height: 13em;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .card {
+        width: 16em;
+        height: 27em;
+    }
+    .card-img {
+        height: 10em;
+    }
+    .card-body {
+        height: 17em;
+    }
+}
+
+
+
 
 
 

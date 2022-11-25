@@ -9,7 +9,7 @@ class BlogPost {
 
 let blogPosts = [];
 
-function fetchPosts()) {
+function fetchPosts() {
     let url = 'TBD'
 
     fetch(url)
