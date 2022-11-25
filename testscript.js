@@ -37,16 +37,15 @@ function fetchPosts() {
 
             for (const dataEntry in jsonData.data) {
                 console.log('Hello');
-                //TBD: Anpassen an JSON model, check api call
                 const title = jsonData.data[dataEntry].attributes.title;
                 const content = jsonData.data[dataEntry].attributes.content;
                 const description = jsonData.data[dataEntry].attributes.description;
                 const slug = jsonData.data[dataEntry].attributes.slug;
                 const date = jsonData.data[dataEntry].attributes.date;
                 const coverURL = jsonData.data[dataEntry].attributes.cover.data.attributes.formats.medium.url;
-                //TBD: Nur erster Autor bis jetzt
+                //TBD: Nur erster Autor bis jetzt + fail wenn kein autor angegeben
                 const author = jsonData.data[dataEntry].attributes.authors.data[0].attributes.name;
-                //TBD: Nur erste Kategorie bis jetzt
+                //TBD: Nur erste Kategorie bis jetzt  + fail wenn kein kategorie angegeben
                 const categories = jsonData.data[dataEntry].attributes.categories.data[0].attributes.name;
 
                 blogPosts.push(new BlogPost(title, content, slug, date, coverURL, description, author, categories));
@@ -64,52 +63,44 @@ function fetchPosts() {
 function createPostCard(post) {
 
     let card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("post-card");
     card.onclick = () => {
         //TBD: Anpassen
         window.location.replace(`/pages/article.html?id=${article.id}`)
     };
 
+    let postCardCover = document.createElement("div");
+    postCardCover.classList.add("post-card-cover");
+
+    let imageContainer = document.createElement("div");
+    imageContainer.classList.add("image-container");
+
     let cardImage = document.createElement("img");
-    cardImage.classList.add("card-img");
-    //TBD: Anpassen
     cardImage.src = post.coverURL;
 
-    let cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-
-    let postTitle = document.createElement("p");
-    postTitle.classList.add("card-title");
-    //TBD: anpassen?
+    let postTitle = document.createElement("h3");
     postTitle.innerHTML = post.title;
 
-    let postDescription = document.createElement("div");
-    postDescription.classList.add("card-description");
-     //TBD: anpassen?
+    let gradient = document.createElement("div");
+    gradient.classList.add("image-gradient")
+
+    let postDate = document.createElement("p");
+    postDate.classList.add("post-card-date");
+    //TBD: anpassen?
+    postDate.innerHTML = post.date;
+
+    let postDescription = document.createElement("p");
+    postDescription.classList.add("post-card-description");
+    //TBD: anpassen?
     postDescription.innerHTML = post.description;
 
-    //TBD: 
-    let postCategories = document.createElement("div");
-    postCategories.classList.add("post-categories-cont");
+    imageContainer.append(cardImage, gradient)
 
-    //für was??
-    let category;
+    postCardCover.append(imageContainer, postTitle)
 
-    //TBD: anpassen? categories?
-    // post.categories.forEach(tg => {
-    //     if (tg.name) {
-    //         tag = document.createElement("span")
-    //         tag.classList.add("post-category-tag");
-    //         //TBD anpassen
-    //         tag.innerHTML = tg.name;
-
-    //         postCategories.appendChild(tag);
-    //     }
-    // });
-
-    cardBody.append(postTitle, postDescription, postCategories);
-
-    card.append(cardImage, cardBody);
+    post-card.append(postCardCover, postDate, postDescription);
 
     return card;
 }
+
+fetchPosts();
