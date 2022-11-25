@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/expertenstyles.css">
-    <script>
-        /* Open when someone clicks on the span element */
-        function openNav() {
-            document.getElementById("hamburger").style.visibility = "hidden";
-            document.getElementById("myNav").style.width = "100%";
-        }
-
-        /* Close when someone clicks on the "x" symbol inside the overlay */
-        function closeNav() {
-            document.getElementById("hamburger").style.visibility = "visible";
-            document.getElementById("myNav").style.width = "0%";
-        }
-    </script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog</title>
+        <!-- Austauschen -->
+        <link rel="stylesheet" href="styles/blogstyles.css">
+        <script>
+            /* Open when someone clicks on the span element */
+            function openNav() {
+                document.getElementById("hamburger").style.visibility = "hidden";
+                document.getElementById("myNav").style.width = "100%";
+            }
+    
+            /* Close when someone clicks on the "x" symbol inside the overlay */
+            function closeNav() {
+                document.getElementById("hamburger").style.visibility = "visible";
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+    </head>
 <body>
     <header>
         <nav class="navbar">
@@ -60,10 +61,10 @@
         </nav>
     </header>
     <div class="rechtsgebiete-section">
-        <h2>Karriere.</h2>
+        <h2>Blog.</h2>
     </div>
-    <div class="rechtsgebiete-section">
-        <p>Es handelt sich um eine Konzeptseite von netzdevelopment.de.</p>
+    <div id="post-list">
+
     </div>
 </body>
 </html>
