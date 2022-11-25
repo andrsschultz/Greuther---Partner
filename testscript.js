@@ -113,5 +113,3 @@ function createPostCard(post) {
 
     return card;
 }
-
-fetchPosts();
