@@ -62,13 +62,11 @@ function fetchPosts() {
 
 function createPostCard(post) {
 
-    let card = document.createElement("div");
-    card.classList.add("post-card");
-    card.onclick = () => {
-        //TBD: Anpassen
-        window.location.replace(`/pages/article.html?id=${article.id}`)
-    };
-
+    let card = document.createElement("a");
+    card.classList.add("post-card")
+    //AUSTAUSCHEN
+    card.href = "artikel.html"
+    
     let postCardCover = document.createElement("div");
     postCardCover.classList.add("post-card-cover");
 
@@ -98,7 +96,7 @@ function createPostCard(post) {
 
     postCardCover.append(imageContainer, postTitle)
 
-    post-card.append(postCardCover, postDate, postDescription);
+    card.append(postCardCover, postDate, postDescription);
 
     return card;
 }
