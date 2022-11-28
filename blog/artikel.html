@@ -7,7 +7,7 @@
         <!-- Austauschen -->
         <title>Neues</title>
         <!-- Austauschen -->
-        <link rel="stylesheet" href="styles/artikelstyles.css">
+        <link rel="stylesheet" href="../styles/artikelstyles.css">
         <script>
             /* Open when someone clicks on the span element */
             function openNav() {
@@ -61,11 +61,11 @@
             </div>
         </nav>
     </header>
-    <div id="article-cont" class="rechtsgebiete-section">
-        <h2>Bundesgerichtshof bestätigt Urteil in einem weiteren Cum-Ex-Strafverfahren</h2>
-        <img class="cover-image" src="" alt="">
-        <p class="date">2022-11-25</p>
-        <h4>Beschluss vom 17. November 2022 – 1 StR 255/22</h4>
+    <div class="rechtsgebiete-section">
+        <h2 id="article-title"></h2>
+        <img id="article-cover" src="assets/bauimage.jpg" alt="">
+        <p id="article-date"></p>
+        <h4 id="article-description"></h4>
         <div id="article-content"></div>
     </div>
     <div class="kontakt-section">
@@ -104,6 +104,7 @@
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
         <a href="karriere.html">Karriere</a>
+        <script src="../artikel.js"></script>
     </footer>
 </body>
 </html>

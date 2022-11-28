@@ -65,7 +65,10 @@ function createPostCard(post) {
     let card = document.createElement("a");
     card.classList.add("post-card")
     //AUSTAUSCHEN
-    card.href = "artikel.html"
+    card.href = `blog/artikel.html?slug=${post.slug}`;
+
+    console.log(card.href);
+
     
     let postCardCover = document.createElement("div");
     postCardCover.classList.add("post-card-cover");
