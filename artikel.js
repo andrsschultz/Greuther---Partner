@@ -32,7 +32,13 @@ function getArticle(slugID) {
 
 function displayArticle(article) {
 
-    document.getElementById("article-cover").src = article.data.attributes.cover.data.attributes.formats.large.url;
+    if ('large' in article.data.attributes.cover.data.attributes.formats) {
+        document.getElementById("article-cover").src = article.data.attributes.cover.data.attributes.formats.large.url;
+    } else if ('medium' in article.data.attributes.cover.data.attributes.formats) {
+        document.getElementById("article-cover").src = article.data.attributes.cover.data.attributes.formats.medium.url;
+    } else if ('small' in article.data.attributes.cover.data.attributes.formats) {
+        document.getElementById("article-cover").src = article.data.attributes.cover.data.attributes.formats.small.url;
+    }
 
     document.getElementById("article-title").innerHTML = article.data.attributes.title;
 
@@ -41,7 +47,9 @@ function displayArticle(article) {
     document.getElementById("article-description").innerHTML = article.data.attributes.description;
 
 
-    var showdown  = showdown.Converter();
+    const showdown = window.showdown;
+    const converter = new showdown.Converter();
+    document.getElementById("article-content").innerHTML = converter.makeHtml(article.data.attributes.content);
 
 }
 

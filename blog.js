@@ -18,6 +18,7 @@ let blogPosts = [];
 function fetchPosts() {
     console.log('fetchPosts() called');
     let url = 'https://strapi-production-ed2e.up.railway.app/api/posts?populate=%2A'
+    console.log(url);
 
     fetch(url)
         .then((response) => {
@@ -42,13 +43,23 @@ function fetchPosts() {
                 const description = jsonData.data[dataEntry].attributes.description;
                 const slug = jsonData.data[dataEntry].attributes.slug;
                 const date = jsonData.data[dataEntry].attributes.date;
-                const coverURL = jsonData.data[dataEntry].attributes.cover.data.attributes.formats.medium.url;
-                //TBD: Nur erster Autor bis jetzt + fail wenn kein autor angegeben
-                const author = jsonData.data[dataEntry].attributes.authors.data[0].attributes.name;
-                //TBD: Nur erste Kategorie bis jetzt  + fail wenn kein kategorie angegeben
-                const categories = jsonData.data[dataEntry].attributes.categories.data[0].attributes.name;
 
-                blogPosts.push(new BlogPost(title, content, slug, date, coverURL, description, author, categories));
+                let coverURL;
+
+                if ('medium' in jsonData.data[dataEntry].attributes.cover.data.attributes.formats) {
+                    coverURL = jsonData.data[dataEntry].attributes.cover.data.attributes.formats.medium.url;
+                } else if ('small' in jsonData.data[dataEntry].attributes.cover.data.attributes.formats) {
+                    coverURL = jsonData.data[dataEntry].attributes.cover.data.attributes.formats.small.url;
+                } else if ('large' in jsonData.data[dataEntry].attributes.cover.data.attributes.formats) {
+                    coverURL = jsonData.data[dataEntry].attributes.cover.data.attributes.formats.large.url;
+                }
+                //TBD: Nur erster Autor bis jetzt + fail wenn kein autor angegeben
+                //const author = jsonData.data[dataEntry].attributes.authors.data[0].attributes.name;
+                //TBD: Nur erste Kategorie bis jetzt  + fail wenn kein kategorie angegeben
+                //const categories = jsonData.data[dataEntry].attributes.categories.data[0].attributes.name;
+
+                //auhor categories
+                blogPosts.push(new BlogPost(title, content, slug, date, coverURL, description));
             }
 
             for(const post in blogPosts) {

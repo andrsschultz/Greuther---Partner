@@ -1,5 +1,5 @@
 {
-  "name": "greuther---partner",
+  "name": "showdown",
   "version": "1.0.0",
   "description": "",
   "main": "artikel.js",
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/andrsschultz/Greuther---Partner.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
