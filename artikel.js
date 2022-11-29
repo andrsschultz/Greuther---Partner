@@ -34,32 +34,15 @@ function displayArticle(article) {
 
     document.getElementById("article-cover").src = article.data.attributes.cover.data.attributes.formats.large.url;
 
-    // document.getElementById("article-title").innerHTML = article.title;
+    document.getElementById("article-title").innerHTML = article.data.attributes.title;
 
-    // document.getElementById("article-description").innerHTML = article.description;
+    document.getElementById("article-date").innerHTML = article.data.attributes.date;
 
-    // document.getElementById("published_date").innerHTML = (new Date(article.published_at)).toDateString();
+    document.getElementById("article-description").innerHTML = article.data.attributes.description;
 
-    // let articleTags = document.getElementById("article-tags");
 
-    // let tag;
+    var showdown  = showdown.Converter();
 
-    // article.tags.forEach(tg => {
-    //     if (tg.name) {
-    //         tag = document.createElement("span")
-    //         tag.classList.add("article-tag");
-    //         tag.innerHTML = tg.name;
-
-    //         articleTags.appendChild(tag);
-    //     }
-    // });
-
-    // const showdown = window.showdown;
-    // const converter = new showdown.Converter();
-
-    // document.getElementById("article-content").innerHTML = converter.makeHtml(article.content);
-
-    // document.getElementById("article-cont").style = "display: flex; display: -webkit-box; display: -ms-flexbox;";
 }
 
 

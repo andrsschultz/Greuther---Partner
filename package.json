@@ -1,0 +1,23 @@
+{
+  "name": "greuther---partner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "artikel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrsschultz/Greuther---Partner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrsschultz/Greuther---Partner/issues"
+  },
+  "homepage": "https://github.com/andrsschultz/Greuther---Partner#readme",
+  "dependencies": {
+    "showdown": "^2.1.0"
+  }
+}
