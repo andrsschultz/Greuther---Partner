@@ -189,6 +189,11 @@ header {
     border-radius: 10px;
 }
 
+.button a {
+    color: white;
+    text-decoration: none;
+}
+
 header h1 {
     padding-left: 10%;
     padding-top: 4%;

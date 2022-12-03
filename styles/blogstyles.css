@@ -488,3 +488,8 @@ footer a {
 }
 
 /* Lassen Sie ... Section Ende */
+
+.button a {
+    color: white;
+    text-decoration: none;
+}

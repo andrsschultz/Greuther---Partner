@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/erstberatungstyles.css">
+    <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("hamburger").style.visibility = "hidden";
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("hamburger").style.visibility = "visible";
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class ="logo" href="index.html">Greuther & Partner</a>
+        <div class="navbar-center">
+            <a href="experten.html">Experten</a>
+            <a href="rechtsgebiete.html">Rechtsgebiete</a>
+            <a href="neues.html">Neues</a>
+        </div>
+        <button class="button">
+            <a href="erstberatung.html">
+                Kostenlose Erstberatung
+            </a>
+        </button>
+    </nav>
+    <nav class="hamburger-menu">
+        <a class ="logo" href="index.html">Greuther & Partner</a>
+        <div id="hamburger" class="row">
+            <input type="checkbox" onclick="openNav()" id="hamburg">
+            <label for="hamburg" class="hamburg">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </label>
+        </div>
+        <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <a href="index.html">Start</a>
+                <a href="experten.html">Experten</a>
+                <a href="rechtsgebiete.html">Rechtsgebiete</a>
+                <a href="neues.html">Neues</a>
+            </div>
+
+        </div>
+    </nav>
+    <div class="rechtsgebiete-section">
+        <h2>Erstberatung.</h2>
+    </div>
+    <div class="rechtsgebiete-section">
+        <p>Sie haben ein rechtliches Anliegen oder Problem?</p>
+        <p>Gerne bieten wir Ihnen eine erste kostenlose Einschätzung an.</p>
+        <p>Schildern Sie einfach Ihr Anliegen im untenstehenden Formular. Wir melden uns umgehend zurück!</p>
+        <div class="schreiben">
+            <form action="" class="kontakt-form">
+                <input type="text" placeholder="Name*" name="name" id="u-name">
+                <input type="text" placeholder="Mail*" name="email" id="u-mail">
+                <input id="check" type="text" placeholder="Telefon" name="telefon">
+                <textarea placeholder="Ihr Anliegen*" name="nachricht" id="u-text" cols="num" rows="num"></textarea>
+                <div class="datenschutz-container">
+                    <input id="c-box" name="datenschutzcheckbox" type="checkbox">
+                    <label for="datenschutzcheckbox">Ja, ich bin damit einverstanden, dass meine Daten zur zweckgebundenen Bearbeitung
+                        meiner Nachricht elektronisch erhoben und gespeichert werden.</label>
+                </div>
+                <button>Nachricht absenden</button>
+            </form>
+        </div>
+        <p><i>Es handelt sich um eine Konzeptseite</a>. Das Formular ist deaktiviert.</i></p>
+    </div>
+    <footer>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="karriere.html">Karriere</a>
+    </footer>
+</body>
+</html>
